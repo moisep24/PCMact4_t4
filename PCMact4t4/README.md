@@ -1,12 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# API REST - Gestión de Servidores (PCMact4t4)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
+
+---
+
+##  URL Base de la API
+`http://162.243.71.127/PCMact4t4/public/api`
+
+---
+
+##  Autenticación (Sanctum)
+
+* **Registro de Usuario:** `POST` `http://162.243.71.127/PCMact4t4/public/api/register`
+* **Inicio de Sesión:** `POST` `http://162.243.71.127/PCMact4t4/public/api/login`
+
+---
+
+##  Endpoints del CRUD (Rutas Protegidas)
+
+> **Nota:** Todas las rutas protegidas requieren los siguientes Headers en la petición:
+> * `Accept: application/json`
+> * `Authorization: Bearer <el token que nos da al crear un usuario >`
+
+* **Listar todos los servidores:**  
+  `GET` `http://162.243.71.127/PCMact4t4/public/api/servidores`
+
+* **Consultar un servidor específico por ID:**  
+  `GET` `http://162.243.71.127/PCMact4t4/public/api/servidores/1`
+
+* **Crear un nuevo servidor:**  
+  `POST` `http://162.243.71.127/PCMact4t4/public/api/servidores`
+
+* **Actualizar un servidor existente:**  
+  `PUT` `http://162.243.71.127/PCMact4t4/public/api/servidores/1`
+
+* **Eliminar un servidor:**  
+  `DELETE` `http://162.243.71.127/PCMact4t4/public/api/servidores/1`
+
+---
+
+##  Estructura de Datos (Body JSON)
+
+Ejemplo de payload para **Crear (`POST`)** o **Actualizar (`PUT`)**:
+
+```json
+{
+    "hostname": "srv-prod-08",
+    "ip_address": "192.168.1.51",
+    "so": "Ubuntu 24.04 LTS",
+    "data_center": "DC-Norte",
+    "estado": "Activo"
+}
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
