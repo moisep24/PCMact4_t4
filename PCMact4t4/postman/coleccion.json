@@ -1,0 +1,200 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PCMact4t4",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000"
+    }
+  ],
+  "paths": {
+    "/api/servidores/1": {
+      "get": {
+        "summary": "http://127.0.0.1:8000/api/servidores/1",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "update servidor ",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hostname": {
+                    "type": "string"
+                  },
+                  "ip_address": {
+                    "type": "string",
+                    "format": "ip-address"
+                  },
+                  "so": {
+                    "type": "string"
+                  },
+                  "data_center": {
+                    "type": "string"
+                  },
+                  "estado": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "hostname": "srv-prod-01-editado",
+                "ip_address": "192.168.1.50",
+                "so": "Ubuntu 24.04 LTS",
+                "data_center": "DC-Norte",
+                "estado": "Inactivo"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delate servidor",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/servidores": {
+      "get": {
+        "summary": "http://127.0.0.1:8000/api/servidores",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/servidores",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hostname": {
+                    "type": "string"
+                  },
+                  "ip_address": {
+                    "type": "string",
+                    "format": "ip-address"
+                  },
+                  "so": {
+                    "type": "string"
+                  },
+                  "data_center": {
+                    "type": "string"
+                  },
+                  "estado": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "hostname": "srv-prod-01",
+                "ip_address": "192.168.1.50",
+                "so": "Ubuntu 24.04 LTS",
+                "data_center": "DC-Norte",
+                "estado": "Activo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/login",
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "email": "moises4@ejemplo.com",
+                "password": "password123"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/register": {
+      "post": {
+        "summary": "http://127.0.0.1:8000/api/register",
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "Moises",
+                "email": "moises4@ejemplo.com",
+                "password": "password123"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
